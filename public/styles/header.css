@@ -8,7 +8,7 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 120px; /* position the header below the fixed nav bar */
+  top: 120px; /* to position the header below the fixed nav bar */
   left: 0; /* to ensure the header starts from the left edge */
 }
 
