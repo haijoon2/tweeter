@@ -34,39 +34,3 @@ body {
   flex-direction: column;
   align-items: center;
  }
-
- form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  width: 100%;
-  margin-top: 10px;
- }
-
- main form input {
-  width: 100%;
-  border: none;
-  border-bottom: 3px solid #545149;
-  background-color: inherit;
-  padding-bottom: 10px;
-  font-weight: bold;
-  color: inherit;
- }
-
- main form input:focus {
-  outline: none;
- }
-
- .button-container {
-  font-family: 'Bungee';
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
- }
-
- .button-container button {
-  color: white;
-  background-color: #4056A1;
-  border: none;
-  padding: 3px 10px;
- }
