@@ -24,6 +24,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -58,7 +59,34 @@
           </div>
         </form>
       </section>
-
     </main>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Custom jQuery code -->
+    <script>
+      // Wait for the document to be ready before executing jQuery code
+      $(document).ready(function () {
+        // Register an event handler for the input event on the textarea with class .text-container
+        $(".text-container").on("input", function () {
+          // Calculate the number of characters left
+          const maxLength = 140;
+          const tweetText = $(this).val();
+          const charactersLeft = maxLength - tweetText.length;
+
+          // Target the counter element associated with the current textarea
+          const counterElement = $(this).closest("form").find(".counter");
+          counterElement.text(charactersLeft);
+
+          // Add CSS class to turn the counter red if invalid
+          if (charactersLeft < 0) {
+            counterElement.addClass("invalid");
+          } else {
+            counterElement.removeClass("invalid");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

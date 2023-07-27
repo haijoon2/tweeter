@@ -37,3 +37,8 @@ form {
   border: none;
   padding: 3px 10px;
  }
+
+ /* when user exceeds 140 character limit, the counter appears RED */ 
+ .invalid {
+  color: red;
+ }
