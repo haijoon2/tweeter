@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,7 +38,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class="profile-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -49,7 +50,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2>Tweet Away</h2>
         <form>
           <label for="tweet-text">What are you humming about?</label>
           <textarea class="text-container" name="text" id="tweet-text"></textarea>
@@ -59,6 +60,30 @@
           </div>
         </form>
       </section>
+      <article class="tweet">
+        <header class="tweet-header">
+          <div class="tweet-header-user">
+            <i class="fa-regular fa-user"></i>
+            your name
+          </div>
+          <aside class="tweet-header-tag">
+            @tag;
+          </aside>
+        </header>
+        <div class="tweet-body">
+          I believe I can fly :3
+        </div>
+        <footer class="tweet-footer">
+          <div class="tweet-footer-date">
+            blah days ago
+          </div>
+          <aside class="tweet-footer-icons">
+            <i class="tweet-footer-icon fa-solid fa-flag" style="color: #4056A1"></i>
+            <i class="tweet-footer-icon fa-solid fa-repeat" style="color:#4056A1"></i>
+            <i class="tweet-footer-icon fa-solid fa-heart" style="color: #4056A1"></i>
+          </aside>
+        </footer>
+      </article>
     </main>
   </body>
 </html>

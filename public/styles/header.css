@@ -1,4 +1,4 @@
-header {
+.profile-header {
   height: 520px;
   width: 100%;
   color: #000000;
@@ -11,6 +11,6 @@ header {
   background-image: url("../images/background-texture.png");
   }
 
-header h2 {
+.profile-header h2{
   margin-bottom: 0;
 }
