@@ -4,13 +4,17 @@ form {
   row-gap: 10px;
   width: 100%;
   margin-top: 10px;
- }
+}
 
- .new-tweet {
+.new-tweet {
   width: 100%;
- }
+}
 
- main section form textarea {
+.tweet-away {
+  margin-bottom: 1.2rem;
+}
+
+main section form textarea {
   width: 100%;
   border: none;
   border-bottom: 3px solid #545149;
@@ -18,27 +22,27 @@ form {
   padding-bottom: 10px;
   font-weight: bold;
   color: inherit;
- }
+}
 
- main section form textarea:focus {
+main section form textarea:focus {
   outline: none;
- }
+}
 
- .button-container {
+.button-container {
   font-family: 'Bungee';
   width: 100%;
   display: flex;
   justify-content: space-between;
- }
+}
 
- .button-container button {
+.button-container button {
   color: white;
   background-color: #4056A1;
   border: none;
   padding: 3px 10px;
- }
+}
 
- /* when user exceeds 140 character limit, the counter appears RED */ 
- .invalid {
+/* when user exceeds 140 character limit, the counter appears RED */ 
+.invalid {
   color: red;
- }
+}
