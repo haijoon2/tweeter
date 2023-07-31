@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 const data = [
   {
     "user": {
@@ -77,4 +76,25 @@ const createTweetElement = function(tweet) {
 
 $("document").ready(() => {
   renderTweets(data);
+});
+
+$("document").ready(() => {
+  $('.tweet-text-form').on('submit', function(event) {
+    event.preventDefault();
+    const formData = $(this).serialize();
+
+    console.log('on submit: ', formData);
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: formData,
+      success: function(response) {
+        console.log('Success: ', response);
+      },
+      error: function(error) {
+        console.log('Error: ', error);
+      }
+    });
+  });
 });
