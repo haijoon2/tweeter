@@ -16,6 +16,22 @@ header.tweet-header {
   margin-bottom: 0.5rem;
 }
 
+.tweet-header-user {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.tweet img {
+  width: 50px;
+  height: 50px;
+}
+
+.tweet-header-tag {
+  display: flex;
+  align-items: center;
+}
+
 div.tweet-body {
   border-bottom: 3px solid #545149;
   padding: 0 0.5rem;
