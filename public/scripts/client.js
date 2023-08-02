@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
@@ -60,8 +62,17 @@ $("document").ready(() => {
   $('.tweet-text-form').on('submit', function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
+    const tweetText = $(this).find('textarea').val();
 
-    console.log('on submit: ', formData);
+    // Validation for the tweet text
+    if (!tweetText || tweetText.length === 0) {
+      alert('Tweet cannot be empty!');
+      return;
+
+    } else if (tweetText.length > 140) {
+      alert('Tweet cannot be more than 140 characters!');
+      return;
+    }
 
     // AJAX request to post a new tweet
     $.ajax({
@@ -70,6 +81,9 @@ $("document").ready(() => {
       data: formData,
       success: function(response) {
         console.log('Success: ', response);
+        // Clear the form after successful submission
+        $(this).find('textarea').val('');
+        loadTweets();
       },
       error: function(error) {
         console.log('Error: ', error);

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 // Wait for the document to be ready before executing jQuery code
 $(document).ready(function () {
   // Register an event handler for the input event on the textarea with class .text-container
