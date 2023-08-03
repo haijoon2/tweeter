@@ -4,26 +4,26 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+$("document").ready(() => {
+  const prependTweet = function(tweet) {
+    let tweetElement = createTweetElement(tweet);
+    $(".container").prepend($('.new-tweet'), tweetElement);
+  };
 
-const prependTweet = function(tweet) {
-  let tweetElement = createTweetElement(tweet);
-  $(".container").prepend($('.new-tweet'), tweetElement);
-};
+  const renderTweets = function(tweets) {
+    for (const tweet of tweets) {
+      prependTweet(tweet);
+    }
+  };
 
-const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
-    prependTweet(tweet);
-  }
-};
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
-
-const createTweetElement = function(tweet) {
-  let $tweet = `<article class="tweet">
+  const createTweetElement = function(tweet) {
+    let $tweet = `<article class="tweet">
                   <header class="tweet-header">
                     <div class="tweet-header-user">
                       <img src="${tweet.user.avatars}" alt="user avatar">
@@ -47,10 +47,9 @@ const createTweetElement = function(tweet) {
                     </aside>
                   </footer>
                 </article>`;
-  return $tweet;
-};
+    return $tweet;
+  };
 
-$("document").ready(() => {
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
@@ -73,17 +72,21 @@ $("document").ready(() => {
     const formData = $(this).serialize();
     const tweetText = $(this).find('textarea');
     const counter = $(this).find('.counter');
+    
+    const errorEmpty = $('.error-empty');
+    const errorLimit = $('.error-limit');
 
+    errorEmpty.hide();
+    errorLimit.hide();
     // Validation for the tweet text
     if (!tweetText.val() || tweetText.val().length === 0) {
-      alert('Tweet cannot be empty!');
+      errorEmpty.slideDown();
       return;
-
     } else if (tweetText.val().length > 140) {
-      alert('Tweet cannot be more than 140 characters!');
+      errorLimit.slideDown();
       return;
     }
-
+    
 
     // AJAX request to post a new tweet
     $.ajax({

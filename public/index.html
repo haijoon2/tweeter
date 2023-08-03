@@ -50,14 +50,25 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <!-- Error Message Element -->
+        <span class="error-empty">
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+          No Empty Tweets, Speak Your Mind!
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+        </span>
+        <span class="error-limit">
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+          Stay Concise: 140 Characters Max
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+        </span>
         <h2 class="tweet-away">Tweet Away <i class="fa-brands fa-twitter"></i> </h2>
         <form class="tweet-text-form">
           <label for="tweet-text">
-          <i class="fa-brands fa-square-twitter"></i>
-          </i> What are you humming about?</label>
+            <i class="fa-brands fa-square-twitter"></i>
+            What are you humming about?
+          </label>
           <textarea class="text-container" name="text" id="tweet-text"></textarea>
           <div class="button-container">
             <button type="submit">Tweet</button>
@@ -65,7 +76,7 @@
           </div>
         </form>
       </section>
-      <div id= "tweets-container"></div>
+      <div id="tweets-container"></div>
     </main>
   </body>
-</html>
+  </html>

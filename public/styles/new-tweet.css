@@ -46,3 +46,20 @@ main section form textarea:focus {
 .invalid {
   color: red;
 }
+
+.error-empty,
+.error-limit{
+  background-color: transparent;
+  color: red;
+  margin: 10px 0;
+  padding: 10px;
+  border: 5px solid red;
+  border-radius: 5px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none;
+  font-weight: bold;
+  text-align: center;
+}
