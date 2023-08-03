@@ -16,6 +16,12 @@ const renderTweets = function(tweets) {
   }
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = function(tweet) {
   let $tweet = `<article class="tweet">
                   <header class="tweet-header">
@@ -28,7 +34,7 @@ const createTweetElement = function(tweet) {
                     </aside>
                   </header>
                   <div class="tweet-body">
-                    ${tweet.content.text}
+                    ${escape(tweet.content.text)}
                   </div>
                   <footer class="tweet-footer">
                     <div class="tweet-footer-date">
