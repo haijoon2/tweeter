@@ -18,3 +18,14 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## Screenshot
+Full Screen
+!["Full Screen"](https://github.com/haijoon2/tweeter/blob/master/docs/Full%20Screen.png?raw=true)
+
+Small Screen
+!["Small Screen"](https://github.com/haijoon2/tweeter/blob/master/docs/Small%20Screen.png?raw=true)
+
+Error Message for Empty Tweet
+!["Error Message for Empty Tweet"](https://github.com/haijoon2/tweeter/blob/master/docs/No%20Empty%20Tweet.png?raw=true)
+
+Error Message for Writing Over 140 Characters
+!["Error Message for Writing Over 140 Characters"](https://github.com/haijoon2/tweeter/blob/master/docs/Limit%20140%20max.png?raw=true)
