@@ -43,6 +43,10 @@ main {
   row-gap: 2rem;
 }
 
+#tweets-container {
+  width: 100%;
+}
+
 @media only screen and (min-width: 1024px) {
   .body-continaer {
     padding-top: 3rem;

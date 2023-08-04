@@ -7,10 +7,12 @@
 $("document").ready(() => {
   const prependTweet = function(tweet) {
     let tweetElement = createTweetElement(tweet);
-    $(".container").prepend($('.new-tweet'), tweetElement);
+    $("#tweets-container").prepend(tweetElement);
   };
 
   const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
+
     for (const tweet of tweets) {
       prependTweet(tweet);
     }
