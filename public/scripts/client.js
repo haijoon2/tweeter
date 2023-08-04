@@ -6,8 +6,8 @@
  */
 $("document").ready(() => {
   const prependTweet = function(tweet) {
-    let tweetElement = createTweetElement(tweet);
-    $("#tweets-container").prepend(tweetElement);
+    const $tweetElement = createTweetElement(tweet);
+    $("#tweets-container").prepend($tweetElement);
   };
 
   const renderTweets = function(tweets) {
@@ -19,13 +19,12 @@ $("document").ready(() => {
   };
 
   const escape = function(str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+    const $div = $("<div></div>").text(str);
+    return $div.html();
   };
 
   const createTweetElement = function(tweet) {
-    let $tweet = `<article class="tweet">
+    const $tweet = `<article class="tweet">
                   <header class="tweet-header">
                     <div class="tweet-header-user">
                       <img src="${tweet.user.avatars}" alt="user avatar">
@@ -71,21 +70,21 @@ $("document").ready(() => {
   // Event listner for the tweet form submission
   $('.tweet-text-form').on('submit', function(event) {
     event.preventDefault();
-    const formData = $(this).serialize();
-    const tweetText = $(this).find('textarea');
-    const counter = $(this).find('.counter');
+    const $formData = $(this).serialize();
+    const $tweetText = $(this).find('textarea');
+    const $counter = $(this).find('.counter');
     
-    const errorEmpty = $('.error-empty');
-    const errorLimit = $('.error-limit');
+    const $errorEmpty = $('.error-empty');
+    const $errorLimit = $('.error-limit');
 
-    errorEmpty.hide();
-    errorLimit.hide();
+    $errorEmpty.hide();
+    $errorLimit.hide();
     // Validation for the tweet text
-    if (!tweetText.val() || tweetText.val().length === 0) {
-      errorEmpty.slideDown();
+    if (!$tweetText.val() || $tweetText.val().length === 0) {
+      $errorEmpty.slideDown();
       return;
-    } else if (tweetText.val().length > 140) {
-      errorLimit.slideDown();
+    } else if ($tweetText.val().length > 140) {
+      $errorLimit.slideDown();
       return;
     }
     
@@ -94,12 +93,12 @@ $("document").ready(() => {
     $.ajax({
       url: '/tweets',
       method: 'POST',
-      data: formData,
+      data: $formData,
       success: function(response) {
         console.log('Success: ', response);
         // Clear the form after successful submission
-        tweetText.val('');
-        counter.text(140);
+        $tweetText.val('');
+        $counter.text(140);
         loadTweets();
       },
       error: function(error) {
