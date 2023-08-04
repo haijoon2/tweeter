@@ -63,3 +63,9 @@ main section form textarea:focus {
   font-weight: bold;
   text-align: center;
 }
+
+@media only screen and (min-width: 768px) {
+  .tweet-away {
+    margin-top: 0;
+  }
+}

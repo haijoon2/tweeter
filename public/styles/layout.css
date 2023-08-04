@@ -27,11 +27,31 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- 
- main {
+
+.body-continaer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
- }
+}
+
+@media only screen and (min-width: 768px) {
+  .body-continaer {
+    padding-top: 3rem;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  main {
+    width: 55%;
+  }
+}

@@ -9,8 +9,17 @@
   padding-top: 120px;
   background-color: #6e82b7;
   background-image: url("../images/background-texture.png");
-  }
+}
 
-.profile-header h2{
-  margin-bottom: 0;
+.profile-header h2 {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .profile-header {
+    height: fit-content;
+    width: 30%;
+    padding: 2rem;
+  }
 }
