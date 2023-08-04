@@ -64,7 +64,7 @@ main section form textarea:focus {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .tweet-away {
     margin-top: 0;
   }
